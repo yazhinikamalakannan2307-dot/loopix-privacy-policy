@@ -6,65 +6,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root {
-    --primary:#0f172a;
+:root{
     --accent:#00f5ff;
-    --bg:#0b1120;
-    --card:#111827;
-    --text:#e5e7eb;
+    --text:#ffffff;
 }
 
+/* RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* ANIMATED GRADIENT BACKGROUND */
 body{
-    font-family: 'Segoe UI', sans-serif;
-    background:linear-gradient(135deg,#0b1120,#0f172a);
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(-45deg,#0f172a,#111827,#0b1120,#1e293b);
+    background-size:400% 400%;
+    animation:gradientMove 12s ease infinite;
     color:var(--text);
     line-height:1.7;
+    min-height:100vh;
 }
 
 /* HEADER */
 header{
     text-align:center;
-    padding:60px 20px;
-    background:radial-gradient(circle at top,#111827,#0b1120);
+    padding:70px 20px 40px;
     animation:fadeDown 1s ease;
 }
 
 header h1{
-    font-size:40px;
+    font-size:42px;
     letter-spacing:2px;
-    color:white;
-    text-shadow:0 0 10px var(--accent);
+    text-shadow:0 0 15px var(--accent);
 }
 
 header p{
     margin-top:10px;
-    color:#94a3b8;
     font-size:18px;
+    opacity:0.8;
 }
 
-/* CONTAINER */
+/* GLASS CARD */
 .container{
     max-width:950px;
     margin:40px auto;
-    padding:40px;
-    background:var(--card);
-    border-radius:16px;
-    box-shadow:0 0 30px rgba(0,245,255,0.08);
+    padding:45px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 0 40px rgba(0,245,255,0.15);
     animation:fadeUp 1.2s ease;
 }
 
 /* HEADINGS */
 h2{
-    margin-top:30px;
+    margin-top:35px;
     margin-bottom:15px;
     font-size:22px;
-    color:white;
     position:relative;
 }
 
@@ -76,61 +78,68 @@ h2::after{
     position:absolute;
     left:0;
     bottom:-6px;
-    border-radius:2px;
+    border-radius:3px;
+    box-shadow:0 0 8px var(--accent);
 }
 
 /* LIST */
 ul{
     padding-left:20px;
 }
-
 li{
     margin-bottom:8px;
 }
 
 /* EMAIL BOX */
 .email-box{
-    background:#0b1224;
-    padding:18px;
-    border:1px solid rgba(0,245,255,0.3);
-    border-radius:10px;
     margin-top:15px;
-    box-shadow:0 0 15px rgba(0,245,255,0.15);
-    transition:0.3s ease;
+    padding:18px;
+    border-radius:12px;
+    background:rgba(0,245,255,0.08);
+    border:1px solid rgba(0,245,255,0.4);
+    box-shadow:0 0 20px rgba(0,245,255,0.2);
+    transition:all 0.3s ease;
 }
 
 .email-box:hover{
-    box-shadow:0 0 25px rgba(0,245,255,0.35);
-    transform:translateY(-3px);
+    transform:translateY(-4px);
+    box-shadow:0 0 30px rgba(0,245,255,0.4);
 }
 
 /* FOOTER */
 footer{
     text-align:center;
-    padding:30px;
+    padding:35px;
     margin-top:40px;
-    color:#94a3b8;
     font-size:14px;
+    opacity:0.7;
 }
 
 /* ANIMATIONS */
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
 @keyframes fadeDown{
     from{opacity:0; transform:translateY(-20px);}
     to{opacity:1; transform:translateY(0);}
 }
 
 @keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px);}
+    from{opacity:0; transform:translateY(40px);}
     to{opacity:1; transform:translateY(0);}
 }
 
+/* MOBILE */
 @media(max-width:768px){
     .container{
         padding:25px;
         margin:20px;
     }
     header h1{
-        font-size:28px;
+        font-size:30px;
     }
 }
 </style>
@@ -179,8 +188,8 @@ footer{
 <p><strong>How to request account deletion:</strong></p>
 
 <div class="email-box">
-    Email: yazhinikamalakannan2307@gmail.com<br>
-    Subject: Account Deletion Request – Loopix 360
+Email: yazhinikamalakannan2307@gmail.com<br>
+Subject: Account Deletion Request – Loopix 360
 </div>
 
 <p style="margin-top:15px;">Upon verification, your account and related data will be permanently deleted within 7 working days.</p>
@@ -191,13 +200,13 @@ footer{
 <h2>8. Contact Us</h2>
 
 <div class="email-box">
-    Email: yazhinikamalakannan2307@gmail.com
+Email: yazhinikamalakannan2307@gmail.com
 </div>
 
 </div>
 
 <footer>
-    © 2026 HM_Tech. All rights reserved.
+© 2026 HM_Tech. All rights reserved.
 </footer>
 
 </body>
