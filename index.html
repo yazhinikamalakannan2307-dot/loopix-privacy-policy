@@ -7,7 +7,7 @@
 
 <style>
 :root{
-    --accent:#00f5ff;
+    --accent:#00eaff;
     --text:#ffffff;
 }
 
@@ -18,15 +18,35 @@
     box-sizing:border-box;
 }
 
-/* ANIMATED GRADIENT BACKGROUND */
+/* BLACK + BLUE MOVING BACKGROUND */
 body{
     font-family:'Segoe UI',sans-serif;
-    background:linear-gradient(-45deg,#0f172a,#111827,#0b1120,#1e293b);
-    background-size:400% 400%;
-    animation:gradientMove 12s ease infinite;
+    background:#000;
     color:var(--text);
     line-height:1.7;
     min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Animated blue glow layers */
+body::before,
+body::after{
+    content:'';
+    position:fixed;
+    width:120%;
+    height:120%;
+    top:-10%;
+    left:-10%;
+    background:radial-gradient(circle at 30% 30%, rgba(0,150,255,0.4), transparent 60%),
+               radial-gradient(circle at 70% 70%, rgba(0,255,255,0.3), transparent 60%);
+    animation:moveBg 15s linear infinite;
+    z-index:-1;
+}
+
+body::after{
+    animation-direction:reverse;
+    animation-duration:25s;
+    opacity:0.6;
 }
 
 /* HEADER */
@@ -39,7 +59,7 @@ header{
 header h1{
     font-size:42px;
     letter-spacing:2px;
-    text-shadow:0 0 15px var(--accent);
+    text-shadow:0 0 20px var(--accent);
 }
 
 header p{
@@ -54,11 +74,11 @@ header p{
     margin:40px auto;
     padding:45px;
     border-radius:20px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.15);
-    box-shadow:0 0 40px rgba(0,245,255,0.15);
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid rgba(0,200,255,0.3);
+    box-shadow:0 0 50px rgba(0,150,255,0.2);
     animation:fadeUp 1.2s ease;
 }
 
@@ -79,7 +99,7 @@ h2::after{
     left:0;
     bottom:-6px;
     border-radius:3px;
-    box-shadow:0 0 8px var(--accent);
+    box-shadow:0 0 10px var(--accent);
 }
 
 /* LIST */
@@ -95,15 +115,15 @@ li{
     margin-top:15px;
     padding:18px;
     border-radius:12px;
-    background:rgba(0,245,255,0.08);
-    border:1px solid rgba(0,245,255,0.4);
-    box-shadow:0 0 20px rgba(0,245,255,0.2);
+    background:rgba(0,200,255,0.08);
+    border:1px solid rgba(0,200,255,0.5);
+    box-shadow:0 0 25px rgba(0,150,255,0.3);
     transition:all 0.3s ease;
 }
 
 .email-box:hover{
     transform:translateY(-4px);
-    box-shadow:0 0 30px rgba(0,245,255,0.4);
+    box-shadow:0 0 40px rgba(0,200,255,0.6);
 }
 
 /* FOOTER */
@@ -116,10 +136,10 @@ footer{
 }
 
 /* ANIMATIONS */
-@keyframes gradientMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+@keyframes moveBg{
+    0%{transform:translate(0,0) rotate(0deg);}
+    50%{transform:translate(-5%,5%) rotate(180deg);}
+    100%{transform:translate(0,0) rotate(360deg);}
 }
 
 @keyframes fadeDown{
