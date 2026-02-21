@@ -1,56 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Loopix 360 - Privacy Policy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: #0f172a;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-        h1, h2 {
-            color: #0f172a;
-        }
-        h2 {
-            margin-top: 25px;
-        }
-        .email-box {
-            background: #f1f5f9;
-            padding: 15px;
-            border-left: 4px solid #0f172a;
-            margin-top: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #777;
-        }
-        @media(max-width:600px){
-            .container{
-                padding:20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Loopix 360 - Privacy Policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --primary:#0f172a;
+    --accent:#00f5ff;
+    --bg:#0b1120;
+    --card:#111827;
+    --text:#e5e7eb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background:linear-gradient(135deg,#0b1120,#0f172a);
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:radial-gradient(circle at top,#111827,#0b1120);
+    animation:fadeDown 1s ease;
+}
+
+header h1{
+    font-size:40px;
+    letter-spacing:2px;
+    color:white;
+    text-shadow:0 0 10px var(--accent);
+}
+
+header p{
+    margin-top:10px;
+    color:#94a3b8;
+    font-size:18px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:950px;
+    margin:40px auto;
+    padding:40px;
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:0 0 30px rgba(0,245,255,0.08);
+    animation:fadeUp 1.2s ease;
+}
+
+/* HEADINGS */
+h2{
+    margin-top:30px;
+    margin-bottom:15px;
+    font-size:22px;
+    color:white;
+    position:relative;
+}
+
+h2::after{
+    content:'';
+    width:60px;
+    height:3px;
+    background:var(--accent);
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    border-radius:2px;
+}
+
+/* LIST */
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+/* EMAIL BOX */
+.email-box{
+    background:#0b1224;
+    padding:18px;
+    border:1px solid rgba(0,245,255,0.3);
+    border-radius:10px;
+    margin-top:15px;
+    box-shadow:0 0 15px rgba(0,245,255,0.15);
+    transition:0.3s ease;
+}
+
+.email-box:hover{
+    box-shadow:0 0 25px rgba(0,245,255,0.35);
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:768px){
+    .container{
+        padding:25px;
+        margin:20px;
+    }
+    header h1{
+        font-size:28px;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -98,7 +183,7 @@
     Subject: Account Deletion Request – Loopix 360
 </div>
 
-<p>Upon verification, your account and related data will be permanently deleted within 7 working days.</p>
+<p style="margin-top:15px;">Upon verification, your account and related data will be permanently deleted within 7 working days.</p>
 
 <h2>7. Your Rights</h2>
 <p>Users have the right to access, update, or request deletion of their personal information.</p>
